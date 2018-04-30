@@ -18,7 +18,7 @@ body {
 }
 
 nav {
-    padding: 0 1%;
+    padding: 0 1% 10px 1%;
 }
 
 .products-wrap {
@@ -69,4 +69,19 @@ nav {
     cursor: pointer;
     text-transform: uppercase;
     margin-right: 10px;
+    margin-top: 10px;
+}
+
+@media all and (max-width: 992px){
+
+    .product {
+        width: 31.33%;
+    }
+}
+
+@media all and (max-width: 575px){
+
+    .product {
+        width: 98%;
+    }
 }

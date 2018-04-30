@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bead</title>
+</head>
+
+<body>
+
+<div class="page-wrap">
+    <header class="header"></header>
+
+    <main class="main" id="app">
+        <nav class="filter">
+            <button class="filter__btn" @click="filtering()">Все работы</button>
+            <button class="filter__btn" @click="filtering('gerdan')">Герданы</button>
+            <button class="filter__btn" @click="filtering('rope')">Жгуты и лариаты</button>
+        </nav>
+
+
+        <div>
+            <ul class="products-wrap">
+                <li v-for="(product, index) in productsList" :key="index" class="product">
+                    <div class="product__main-part">
+                        <div class="product__img-cont"><img :src="product.img" alt=""></div>
+                        <div class="product__name">{{product.name}}</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </main>
+
+    <footer class="footer"></footer>
+</div>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
+<script type="text/javascript" src="js/vue.min.js"></script>
+<script type="text/javascript" src="js/main-example.js"></script>
+</body>
+

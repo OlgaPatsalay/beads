@@ -1,10 +1,6 @@
-// import Slick from '../node_modules/vue-slick';
 
 new Vue({
 
-    // components: { Slick },
-
-    
 
     el: '#app',
 
@@ -113,15 +109,6 @@ new Vue({
                     img: 'images/products/2016.08.14_гердан_крас черн зол (1).jpg',
                     category: 'gerdan'
                 },
-
-
-
-
-
-
-
-
-
                 {
                     name: 'Жгут Греческий черно-белый',
                     dscr: 'Длина около 42 см.',
@@ -248,16 +235,6 @@ new Vue({
                     img: 'images/products/2014.11_1.jpg',
                     category: 'rope'
                 },
-
-
-
-
-
-
-
-
-
-
             ],
             productsList: []
         }
@@ -272,7 +249,7 @@ new Vue({
                     return item.category === category;
                 });
             } else {
-                window.location.hash = '#';
+                window.location.hash = '';
                 return this.productsList = this.products;
 
             }
