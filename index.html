@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118448001-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-118448001-1');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
@@ -26,7 +35,7 @@
             <ul class="products-wrap">
                 <li v-for="(product, index) in productsList" :key="index" class="product">
                     <div class="product__main-part">
-                        <div class="product__img-cont"><img :src="product.img" alt=""></div>
+                        <div class="product__img-cont"><img :src="product.img" :alt="product.name"></div>
                         <div class="product__name">{{product.name}}</div>
                     </div>
                     <div class="product__hover-part">
@@ -44,5 +53,11 @@
 <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
 <script type="text/javascript" src="js/vue.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+<div class="modal">
+    <div class="modal__overlay">
+
+
+    </div>
+</div>
 </body>
 
