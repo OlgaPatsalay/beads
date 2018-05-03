@@ -53,7 +53,7 @@
     </main>
 
     <footer class="footer"></footer>
-    <div v-show="currentProduct" class="modal">
+    <div v-if="currentProduct" class="modal">
         <div class="modal__overlay" @click="closePopup">
         </div>
         <div class="img-big">
