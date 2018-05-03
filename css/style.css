@@ -80,7 +80,6 @@ nav {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0,0,0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,6 +93,35 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
+    transition: opacity .1s ease-in;
+    background-color: rgba(0,0,0, 0.5);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .2s ease-in, transform 0.2s ease-in;
+}
+
+.fade-enter .modal__overlay,
+.fade-leave-to .modal__overlay {
+    opacity: 0;
+}
+
+.fade-enter-to .modal__overlay,
+.fade-leave .modal__overlay {
+    opacity: 1;
+}
+
+.fade-enter .img-big,
+.fade-leave-to .img-big {
+    transform: scale(0.2);
+    opacity: 0;
+}
+
+.fade-enter-to .img-big,
+.fade-leave .img-big {
+    transform: scale(1);
+    opacity: 1;
 }
 
 .img-big {
@@ -102,6 +130,7 @@ nav {
     background-color: #fff;
     padding: 10px;
     position: relative;
+    transition: opacity .2s ease-in, transform .2s ease-in;;
 }
 
 .img-big img {

@@ -53,6 +53,7 @@
     </main>
 
     <footer class="footer"></footer>
+<transition name="fade">
     <div v-if="currentProduct" class="modal">
         <div class="modal__overlay" @click="closePopup">
         </div>
@@ -62,7 +63,7 @@
 
         </div>
     </div>
-
+</transition>
 </div>
 
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
