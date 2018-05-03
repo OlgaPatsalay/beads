@@ -1,6 +1,7 @@
 
 new Vue({
 
+
     el: '#app',
 
     data: function () {
@@ -37,7 +38,8 @@ new Vue({
                     category: 'gerdan'
                 },
             ],
-            productsList: []
+            productsList: [],
+            currentProduct: false
         }
     },
     methods: {
@@ -50,11 +52,19 @@ new Vue({
                     return item.category === category;
                 });
             } else {
-                window.location.hash = '#';
+                window.location.hash = '';
                 return this.productsList = this.products;
 
             }
-        }
+        },
+        setCurrentProduct(product) {
+            this.currentProduct = product;
+
+        },
+        closePopup () {
+            this.currentProduct = false;
+        },
+
     },
     mounted() {
 
@@ -63,8 +73,16 @@ new Vue({
         if (window.location.hash) {
             var hash = window.location.hash.substring(1);
             this.filtering(hash);
-
         }
 
+    },
+    created: function () {
+        var self = this;
+
+        window.addEventListener('keyup', function (e) {
+            if (e.keyCode === 27) {
+                self.closePopup();
+            }
+        })
     }
 });

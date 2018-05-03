@@ -11,10 +11,10 @@
 
 <body>
 
-<div class="page-wrap">
+<div class="page-wrap" id="app">
     <header class="header"></header>
-
-    <main class="main" id="app">
+    <main class="main">
+        <h1>Фото из интернета.</h1>
         <nav class="filter">
             <button class="filter__btn" @click="filtering()">Все работы</button>
             <button class="filter__btn" @click="filtering('gerdan')">Герданы</button>
@@ -24,22 +24,42 @@
 
         <div>
             <ul class="products-wrap">
-                <li v-for="(product, index) in productsList" :key="index" class="product">
+                <li v-for="(product, index) in productsList" :key="index" class="product" @click="setCurrentProduct(product)">
                     <div class="product__main-part">
-                        <div class="product__img-cont"><img :src="product.img" alt=""></div>
+                        <div class="product__img-cont"><img :src="product.img" :alt="product.name"></div>
                         <div class="product__name">{{product.name}}</div>
+                    </div>
+                    <div class="product__hover-part">
+                        <div class="product__dscr">{{product.dscr}}</div>
                     </div>
                 </li>
             </ul>
+
+            <div v-if="productsList.length <= 0">К сожалению, по выбранному вами разделу не найдено ни одного изделия. Вы можете<a href="#" @click="filtering()">вернуться ко всем работам.</a></div>
+
         </div>
+
+
 
     </main>
 
     <footer class="footer"></footer>
+    <div v-show="currentProduct" class="modal">
+        <div class="modal__overlay" @click="closePopup">
+        </div>
+        <div class="img-big">
+            <button class="btn-close" @click="closePopup" title="Закрыть"></button>
+            <img :src="currentProduct.img" alt="">
+
+        </div>
+    </div>
+
 </div>
+
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
 <script type="text/javascript" src="js/vue.min.js"></script>
 <script type="text/javascript" src="js/main-example.js"></script>
+
 </body>
 

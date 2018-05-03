@@ -236,7 +236,8 @@ new Vue({
                     category: 'rope'
                 },
             ],
-            productsList: []
+            productsList: [],
+            currentProduct: false
         }
     },
     methods: {
@@ -253,7 +254,15 @@ new Vue({
                 return this.productsList = this.products;
 
             }
-        }
+        },
+        setCurrentProduct(product) {
+            this.currentProduct = product;
+
+        },
+        closePopup () {
+            this.currentProduct = false;
+        },
+
     },
     mounted() {
 
@@ -262,8 +271,16 @@ new Vue({
         if (window.location.hash) {
             var hash = window.location.hash.substring(1);
             this.filtering(hash);
-
         }
 
+    },
+    created: function () {
+        var self = this;
+
+        window.addEventListener('keyup', function (e) {
+           if (e.keyCode === 27) {
+               self.closePopup();
+           }
+        })
     }
 });
