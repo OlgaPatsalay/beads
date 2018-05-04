@@ -250,7 +250,7 @@ new Vue({
     methods: {
 
         filtering(category = null, e) {
-            let el = document.getElementsByClassName('filter__btn active')[0];
+            let el = document.getElementsByClassName('btn-filter active')[0];
 
             if (el) {
                 el.classList.remove('active');
