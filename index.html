@@ -25,15 +25,15 @@
     <main class="main">
         <h1>Герданы и жгуты из бисера.</h1>
         <nav class="filter">
-            <button class="filter__btn" @click="filtering()">Все работы</button>
-            <button class="filter__btn" @click="filtering('gerdan')">Герданы</button>
-            <button class="filter__btn" @click="filtering('rope')">Жгуты и лариаты</button>
+            <button class="btn-filter active" @click="filtering('', $event)">Все работы</button>
+            <button class="btn-filter" @click="filtering('gerdan', $event)">Герданы</button>
+            <button class="btn-filter" @click="filtering('rope', $event)">Жгуты и лариаты</button>
         </nav>
 
 
         <div>
             <ul class="products-wrap">
-                <li v-for="(product, index) in productsList" :key="index" class="product" @click="setCurrentProduct(product)">
+                <li v-for="(product, index) in productsList" :key="index" class="product" @click="setCurrentProduct(product, index)">
                     <div class="product__main-part">
                         <div class="product__img-cont"><img :src="product.img" :alt="product.name"></div>
                         <div class="product__name">{{product.name}}</div>
@@ -44,7 +44,7 @@
                 </li>
             </ul>
 
-            <div v-if="productsList.length <= 0">К сожалению, по выбранному вами разделу не найдено ни одного изделия. Вы можете<a href="#" @click="filtering()">вернуться ко всем работам.</a></div>
+            <div v-if="productsList.length <= 0">К сожалению, по выбранному вами разделу не найдено ни одного изделия. Вы можете <a href="#" @click="filtering()">вернуться ко всем работам.</a></div>
 
         </div>
 
@@ -58,8 +58,10 @@
         <div class="modal__overlay" @click="closePopup">
         </div>
         <div class="img-big">
-            <button class="btn-close" @click="closePopup" title="Закрыть"></button>
+            <button class="btn btn-close" @click="closePopup" title="Закрыть"></button>
             <img :src="currentProduct.img" alt="">
+            <button class="btn btn-slider btn-prev" @click="changeSlide('prev')">Prev</button>
+            <button class="btn btn-slider btn-next" @click="changeSlide('next')">Next</button>
 
         </div>
     </div>
