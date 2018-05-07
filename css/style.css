@@ -203,9 +203,9 @@ nav {
 }
 
 .btn-slider {
-    position: absolute;
+    position: fixed;
     top: 50%;
-    left: -30px;
+    left: 10px;
     width: 55px;
     height: 55px;
     color: transparent;
@@ -217,17 +217,17 @@ nav {
 .btn {
     background-color: #ececec;
     border: 2px solid #888;
-    -webkit-box-shadow: inset 0px 0px 7px 0px rgba(50, 50, 50, 0.3);
-    -moz-box-shadow:    inset 0px 0px 7px 0px rgba(50, 50, 50, 0.3);
-    box-shadow:         inset 0px 0px 7px 0px rgba(50, 50, 50, 0.3);
+    -webkit-box-shadow: inset 0 0 7px 0 rgba(50, 50, 50, 0.3);
+    -moz-box-shadow:    inset 0 0 7px 0 rgba(50, 50, 50, 0.3);
+    box-shadow:         inset 0 0 7px 0 rgba(50, 50, 50, 0.3);
 }
 
 .btn:hover,
 .btn:focus,
 .btn:active {
-    -webkit-box-shadow: inset 0px 0px 7px 0px rgba(50, 50, 50, 0.7);
-    -moz-box-shadow:    inset 0px 0px 7px 0px rgba(50, 50, 50, 0.7);
-    box-shadow:         inset 0px 0px 7px 0px rgba(50, 50, 50, 0.7);
+    -webkit-box-shadow: inset 0 0 7px 0 rgba(50, 50, 50, 0.7);
+    -moz-box-shadow:    inset 0 0 7px 0 rgba(50, 50, 50, 0.7);
+    box-shadow:         inset 0 0 7px 0 rgba(50, 50, 50, 0.7);
     outline: none;
 }
 
@@ -248,7 +248,7 @@ nav {
 
 .btn-next {
     left: auto;
-    right: -30px;
+    right: 10px;
 }
 
 .btn-next:before {
