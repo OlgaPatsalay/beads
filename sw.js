@@ -2,9 +2,9 @@ var CACHE_NAME = 'bead-cache-v7';
 var urlsToCache = [
     'index.html',
     'example.html',
-    '/css/style.css',
-    '/js/main.js',
-    '/js/main-example.js',
+    'css/style.css',
+    'js/main.js',
+    'js/main-example.js',
     'js/vue.js',
     'js/vue.min.js',
     'images/products/2018.03.25-1.jpg',
