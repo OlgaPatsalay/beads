@@ -1,6 +1,6 @@
 var CACHE_NAME = 'bead-cache-v7';
 var urlsToCache = [
-    '/',
+    'index.html',
     'example.html',
     '/css/style.css',
     '/js/main.js',
