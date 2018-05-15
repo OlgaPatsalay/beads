@@ -249,7 +249,7 @@ new Vue({
     },
     methods: {
 
-        filtering(category = null, e) {
+        filtering(category, e) {
             let el = document.getElementsByClassName('btn-filter active')[0];
 
             if (el) {
@@ -305,7 +305,12 @@ new Vue({
         //     let hash = window.location.hash.substring(1);
         //     this.filtering(hash, '');
         // }
-    },
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('./sw.js')
+                .then(function() { console.log('Service Worker Registered'); });
+        }    },
 
     created: function () {
         let self = this;

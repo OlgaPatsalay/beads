@@ -2,11 +2,17 @@
 <html lang="en">
 
 <head>
+    <title>Olga Patsalay - Bead</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="css/style.css">
-    <title>Bead</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="/manifest.json">
+
 </head>
 
 <body>
@@ -14,17 +20,17 @@
 <div class="page-wrap" id="app">
     <header class="header"></header>
     <main class="main">
-        <h1>Фото из интернета.</h1>
+        <h1>Герданы и жгуты из бисера.</h1>
         <nav class="filter">
-            <button class="filter__btn" @click="filtering()">Все работы</button>
-            <button class="filter__btn" @click="filtering('gerdan')">Герданы</button>
-            <button class="filter__btn" @click="filtering('rope')">Жгуты и лариаты</button>
+            <button class="btn-filter active" @click="filtering('', $event)">Все работы</button>
+            <button class="btn-filter" @click="filtering('gerdan', $event)">Герданы</button>
+            <button class="btn-filter" @click="filtering('rope', $event)">Жгуты и лариаты</button>
         </nav>
 
 
         <div>
             <ul class="products-wrap">
-                <li v-for="(product, index) in productsList" :key="index" class="product" @click="setCurrentProduct(product)">
+                <li v-for="(product, index) in productsList" :key="index" class="product" @click="setCurrentProduct(product, index)">
                     <div class="product__main-part">
                         <div class="product__img-cont"><img :src="product.img" :alt="product.name"></div>
                         <div class="product__name">{{product.name}}</div>
@@ -44,20 +50,21 @@
     </main>
 
     <footer class="footer"></footer>
-    <div v-show="currentProduct" class="modal">
-        <div class="modal__overlay" @click="closePopup">
-        </div>
-        <div class="img-big">
-            <button class="btn-close" @click="closePopup" title="Закрыть"></button>
-            <img :src="currentProduct.img" alt="">
+    <transition name="fade">
+        <div v-if="currentProduct" class="modal">
+            <div class="modal__overlay" @click="closePopup">
+            </div>
+            <div class="img-big">
+                <button class="btn btn-close" @click="closePopup" title="Закрыть"></button>
+                <img :src="currentProduct.img" alt="">
 
+            </div>
+            <button class="btn btn-slider btn-prev" @click="changeSlide('prev')">Prev</button>
+            <button class="btn btn-slider btn-next" @click="changeSlide('next')">Next</button>
         </div>
-    </div>
-
+    </transition>
 </div>
 
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
-<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
 <script type="text/javascript" src="js/vue.min.js"></script>
 <script type="text/javascript" src="js/main-example.js"></script>
 
