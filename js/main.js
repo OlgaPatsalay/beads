@@ -88,7 +88,7 @@ new Vue({
                 {
                     name: 'Гердан Бирюзовый',
                     dscr: 'Ширина центрального элемента около 6 см.',
-                    img: 'images/products/2017.11.11-2_981x773.jpg',
+                    img: 'images/products/2016.10.29_astafyeva biryuzovyiy (1)_1296x972.jpg',
                     category: 'gerdan'
                 },
                 {

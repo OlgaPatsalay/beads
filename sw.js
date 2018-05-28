@@ -1,4 +1,4 @@
-var CACHE_NAME = 'bead-cache-v8';
+var CACHE_NAME = 'bead-cache-v9';
 var urlsToCache = [
     'index.html',
     'example.html',
