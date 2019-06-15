@@ -8,6 +8,30 @@ new Vue({
         return {
             products: [
                 {
+                    name: 'Гердан Красный Мак',
+                    dscr: 'Длина около 55 см. Ширина центрального элемента около 7,5 см.',
+                    img: 'images/products/2019.05.05.jpg',
+                    category: 'gerdan'
+                },
+                {
+                    name: 'Гердан Восточный (фиол + беж)',
+                    dscr: 'Длина около 55 см. Ширина центрального элемента около 7 см.',
+                    img: 'images/products/2019.05.04.jpg',
+                    category: 'gerdan'
+                },
+                {
+                    name: 'Жгут из бисера под джинсы',
+                    dscr: '',
+                    img: 'images/products/2019.05.03.jpg',
+                    category: 'rope'
+                },
+                {
+                    name: 'Гердан Восточный (сний + беж)',
+                    dscr: 'Длина около 55 см. Ширина центрального элемента около 7 см.',
+                    img: 'images/products/2019.03.03.jpg',
+                    category: 'gerdan'
+                },
+                {
                     name: 'Гердан В коричневых тонах',
                     dscr: '',
                     img: 'images/products/2018.03.25-1.jpg',
